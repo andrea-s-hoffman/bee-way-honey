@@ -2,20 +2,123 @@
 <header class="header">
     <div class="nav">
         <div class="logo-container">
-            <a href="#set-shot">
+            <a href="#branding">
                 <img class="logo" src="assets/Asset 2@2x.png" alt="logo">
             </a>
         </div>
         <div class="nav-options">
             <a href="#products">
-                <p class="products">products</p>
+                <p class="products">shop</p>
             </a>
             <a href="#about">
-                <p class="about">about us</p>
+                <p class="about">about</p>
             </a>
-            <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+            <button class="cart" (click)="toggleShowCart()">
+                <div class="cart-number" *ngIf="quantity > 0">
+                    <p class="number-of-items">{{quantity}}</p>
+                </div>
+                <i class="fas fa-shopping-cart"></i>
+            </button>
         </div>
     </div>
 </header>
-<div class="cart-menu" id="cart-menu"></div>
+
+<div class="cart-menu" *ngIf="showCart">
+    <div class="cart-details">
+        <ul *ngFor="let item of cart, index as i">
+            <li class="cart-item">
+                <p class="cart-detail cart-prod">{{cart[i].product}}</p>
+                <img class="cart-img" src="{{cart[i].image}}" alt="">
+                <p class="cart-detail cart-price">${{cart[i].firstSizePrice.toFixed(2)}} each</p>
+                <div class="quantity-container">
+                    <p class="cart-detail cart-qty">QTY: </p>
+                    <div class="edit-qty">
+                        <p class="plus-minus">-</p>
+                    </div>
+                    <p class="cart-qty cart-detail">{{cart[i].quantity}}</p>
+                    <div class="edit-qty">
+                        <p class="plus-minus">+</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <p class="cart-detail cart-total">Total: ${{total.toFixed(2)}}</p>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="cart-menu" id="cart-menu"></div> -->
+<!-- <div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak>
+
+    <section layout="row" flex>
+
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')"
+            md-whiteframe="4">
+
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+            </md-toolbar>
+            <md-content layout-padding ng-controller="LeftCtrl">
+                <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                    Close Sidenav Left
+                </md-button>
+                <p hide show-gt-md>
+                    This sidenav is locked open on your device. To go back to the default behavior,
+                    narrow your display.
+                </p>
+            </md-content>
+
+        </md-sidenav>
+
+        <md-content flex layout-padding>
+
+            <div layout="column" layout-align="top center">
+                <p>
+                    The left sidenav will 'lock open' on a medium (>=960px wide) device.
+                </p>
+                <p>
+                    The right sidenav will focus on a specific child element.
+                </p>
+
+                <div>
+                    <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                        Toggle left
+                    </md-button>
+                </div>
+
+                <div>
+                    <md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
+                        Toggle right
+                    </md-button>
+                </div>
+            </div>
+
+            <div flex></div>
+
+        </md-content>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Sidenav Right</h1>
+            </md-toolbar>
+            <md-content ng-controller="RightCtrl" layout-padding>
+                <form>
+                    <md-input-container>
+                        <label for="testInput">Test input</label>
+                        <input type="text" id="testInput" ng-model="data" md-autofocus>
+                    </md-input-container>
+                </form>
+                <md-button ng-click="close()" class="md-primary">
+                    Close Sidenav Right
+                </md-button>
+            </md-content>
+
+        </md-sidenav>
+
+    </section>
+
+</div> -->
 <!-- </main> -->

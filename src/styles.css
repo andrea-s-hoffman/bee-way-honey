@@ -19,13 +19,19 @@
   border: none;
   text-decoration: none;
   scroll-behavior: smooth;
-  overflow-x: hidden;
   font-size: 14px;
   font-family: "Clarendon";
 }
 
-a {
+a,
+a:hover,
+a:visited {
   color: white;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
 }
 
 /* colors

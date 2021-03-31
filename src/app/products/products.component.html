@@ -1,0 +1,27 @@
+<div class="product-card" id="{{itemRef.index}}">
+    <a href="#{{itemRef.index - 1}}" *ngIf="itemRef.index !== 0">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <div class="product">
+        <img class="prod-img" src="{{itemRef.image}}" alt="">
+        <div class="prod-deets">
+            <div class="title-description">
+                <p class="prod title">{{itemRef.product}}</p>
+                <p class="prod description">{{itemRef.description}}</p>
+            </div>
+            <div class="pos-container">
+                <p class="pos price" *ngIf="oneOzSelected">${{itemRef.firstSizePrice.toFixed(2)}}</p>
+                <p class="pos price" *ngIf="oneOzSelected === false">${{itemRef.secondSizePrice.toFixed(2)}}</p>
+                <p class="pos oz" [ngClass]="{'selected': oneOzSelected}" (click)="toggleSizeSelection()">
+                    {{itemRef.firstSize}}</p>
+                <!-- <p class="pos oz" [ngClass]="{'selected': oneOzSelected === false}" (click)="toggleSizeSelection()">
+                    {{itemRef.secondSize}}</p> -->
+                <p class="pos add" (click)="emitCartItem(itemRef)">add to cart</p>
+                <!-- <p class="pos details">more details</p> -->
+            </div>
+        </div>
+    </div>
+    <a href="#{{itemRef.index +1}}" *ngIf="itemRef.index + 1 !== productsRef.length">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>

@@ -1,0 +1,100 @@
+a {
+  scroll-behavior: unset;
+}
+
+.product-card {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  margin: 50px 0 0 0;
+  position: relative;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 310px;
+  margin-top: 15vh;
+}
+
+.prod-img {
+  width: 325px;
+  height: 325px;
+  margin: 0 0 20px 0;
+}
+
+.prod-deets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-description {
+  width: 70%;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.title,
+.price {
+  font-family: "Clarendon Bold";
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #002f3e;
+  letter-spacing: 0.25px;
+}
+
+.description,
+.oz {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.25px;
+  /* font-weight: 400; */
+}
+
+.add {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.25px;
+  font-weight: 500;
+}
+
+.add:hover {
+  border-bottom: solid 1px black;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-weight: 900;
+  z-index: 3;
+  top: 50%;
+  position: absolute;
+  font-size: 32px;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  color: black;
+}
+
+.fa-chevron-left {
+  left: 22px;
+}
+.fa-chevron-right {
+  right: -20px;
+}
+
+.selected {
+  border-bottom: solid 1px black;
+}

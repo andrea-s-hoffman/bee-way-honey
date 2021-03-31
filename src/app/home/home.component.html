@@ -1,10 +1,22 @@
 <app-header></app-header>
 <main class="main">
-    <section class="branding">
+    <section class="branding" id="branding">
         <div><img class="bee-way-logo" src="assets/Asset 4@2x.png" alt=""></div>
     </section>
-    <section class="set-shot" id="set-shot">
+    <section class="set-shot" id="products">
+        <div class="shop-container">
+            <div class="text-container">
+                <a class="go-to-shop" href="#shop">
+                    <p class="shop-text">sweet to the soul.<br> health to the bones.<br></p>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
     </section>
-    <section class="products" id="products"></section>
+    <section class="products" id="shop">
+        <app-products *ngFor="let item of productsForSale, index as i" [itemRef]="item" [productsRef]="productsForSale"
+            (newCartItemEvent)="addToCart($event)">
+        </app-products>
+    </section>
     <section class="about" id="about"></section>
 </main>
