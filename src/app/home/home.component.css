@@ -1,0 +1,32 @@
+.main,
+.branding,
+.set-shot,
+.about,
+.products {
+  width: 100vw;
+  height: 100vh;
+}
+
+.set-shot {
+  background-image: url("src/assets/prod-shot-1.jpg");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  display: flex;
+}
+
+.branding {
+  position: relative;
+}
+
+.bee-way-logo {
+  width: 60%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about {
+  background-color: coral;
+}

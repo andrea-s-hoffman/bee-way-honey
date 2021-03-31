@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Clarendon";
+  src: url("src/assets/ClarendonLTStd.otf") format("opentype");
+}
+@font-face {
+  font-family: "Clarendon Light";
+  src: url("src/assets/ClarendonLTStd-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: "Clarendon Bold";
+  src: url("src/assets/ClarendonLTStd-Bold.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-size: 14px;
+  font-family: "Clarendon";
+}
+
+a {
+  color: white;
+}
+
+/* colors
+yellow: #ECC236
+blue: #313186
+green: #002F3E
+red: #C12033
+pink: #92215E
+purple: #4D1B3B
+*/
