@@ -20,7 +20,6 @@
 
 .logo-container,
 .nav-options {
-  color: chartreuse;
   position: absolute;
   top: 51%;
 }
@@ -48,6 +47,7 @@
 .fa-shopping-cart {
   color: white;
   font-size: 2em;
+  margin-left: 4px;
 }
 
 .about,
@@ -56,6 +56,7 @@
   font-size: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-family: "Clarendon Bold";
 }
 
 .cart {
@@ -66,7 +67,7 @@
 
 .cart-number {
   position: absolute;
-  background-color: #ecc236;
+  background-color: #92215e;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -83,12 +84,12 @@
 .number-of-items {
   color: white;
   font-size: 18px;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .cart-menu {
   height: 100vh;
-  width: 60vw;
+  width: 70vw;
   background-color: #313186;
   position: absolute;
   top: 0;
@@ -97,15 +98,17 @@
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  align-items: center;
 }
 
 .cart-details {
-  margin: 125px 0 0 50px;
+  margin: 100px 0 0 0;
   color: white;
 }
 
 .cart-item {
   list-style: none;
+  margin: 30px 0;
 }
 
 .cart-detail {
@@ -130,7 +133,7 @@
 }
 
 .cart-qty {
-  margin: 0 5px 0 0;
+  margin: 0 5px;
 }
 
 .cart-total {
@@ -166,4 +169,6 @@
   font-size: 25px;
   color: #313186;
   font-weight: 500;
+  margin-top: 3.8px;
+  padding: 15px;
 }

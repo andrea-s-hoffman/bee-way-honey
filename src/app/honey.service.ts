@@ -14,7 +14,7 @@ export class HoneyService {
       firstSizePrice: 14.50,
       secondSize: "4 oz",
       secondSizePrice: 26.00,
-      description: "Boost your immune system with the Queen Bee's very own defense. Add her elixcir to your oats or coffee for a tasty boost in the morning.",
+      description: "Strengthen your immune system with the Queen Bee's very own defense. Add her elixcir to your oats or coffee for a royal boost every morning.",
       index: 0,
       quantity: 1
     },
@@ -36,7 +36,7 @@ export class HoneyService {
       firstSizePrice: 21.00,
       secondSize: "2 lb",
       secondSizePrice: 45.00,
-      description: "Not just for the bears. These snacks make for the perfect pick-me-up on a hot summer's day. Or during your winter hibernation... we don't judge.",
+      description: "Not just for the bears. These wafers make for the perfect pick-me-up on a hot summer's day. Or during your winter hibernation... we don't judge.",
       index: 2,
       quantity: 1
     }

@@ -12,11 +12,13 @@
             <div class="pos-container">
                 <p class="pos price" *ngIf="oneOzSelected">${{itemRef.firstSizePrice.toFixed(2)}}</p>
                 <p class="pos price" *ngIf="oneOzSelected === false">${{itemRef.secondSizePrice.toFixed(2)}}</p>
-                <p class="pos oz" [ngClass]="{'selected': oneOzSelected}" (click)="toggleSizeSelection()">
-                    {{itemRef.firstSize}}</p>
+                <!-- <p class="pos oz" [ngClass]="{'selected': oneOzSelected}" (click)="toggleSizeSelection()">
+                    {{itemRef.firstSize}}</p> -->
                 <!-- <p class="pos oz" [ngClass]="{'selected': oneOzSelected === false}" (click)="toggleSizeSelection()">
                     {{itemRef.secondSize}}</p> -->
-                <p class="pos add" (click)="emitCartItem(itemRef)">add to cart</p>
+                <div class="add-box" (click)="emitCartItem(itemRef)">
+                    <p class="pos add">add to cart</p>
+                </div>
                 <!-- <p class="pos details">more details</p> -->
             </div>
         </div>

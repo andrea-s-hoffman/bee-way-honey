@@ -14,8 +14,8 @@
                 <p class="about">about</p>
             </a>
             <button class="cart" (click)="toggleShowCart()">
-                <div class="cart-number" *ngIf="quantity > 0">
-                    <p class="number-of-items">{{quantity}}</p>
+                <div class="cart-number" *ngIf="cart.length > 0">
+                    <p class="number-of-items">{{cart.length}}</p>
                 </div>
                 <i class="fas fa-shopping-cart"></i>
             </button>
@@ -31,10 +31,10 @@
                 <img class="cart-img" src="{{cart[i].image}}" alt="">
                 <p class="cart-detail cart-price">${{cart[i].firstSizePrice.toFixed(2)}} each</p>
                 <div class="quantity-container">
-                    <p class="cart-detail cart-qty">QTY: </p>
                     <div class="edit-qty">
                         <p class="plus-minus">-</p>
                     </div>
+                    <p class="cart-detail cart-qty">QTY: </p>
                     <p class="cart-qty cart-detail">{{cart[i].quantity}}</p>
                     <div class="edit-qty">
                         <p class="plus-minus">+</p>

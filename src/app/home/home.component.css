@@ -18,8 +18,9 @@
 
 .set-shot {
   background-image: url("src/assets/prod-shot-1.jpg");
-  background-size: 170%;
-  background-position: center;
+  background-size: 184%;
+  background-position-x: -109px;
+  background-position-y: -21px;
   top: 0;
   display: flex;
   position: relative;
@@ -36,13 +37,13 @@
 }
 
 .text-container {
-  width: 90%;
-  margin: 155px 0 0 0;
+  width: 83%;
+  margin: 170px 0 0 0;
 }
 
 .shop-text {
-  font-size: 58px;
-  line-height: 58px;
+  font-size: 45px;
+  line-height: 38px;
   letter-spacing: 3px;
   text-align: center;
   color: black;
@@ -55,14 +56,87 @@
 }
 
 .fa-chevron-down {
-  font-size: 65px;
+  font-size: 40px;
   padding: 30px;
-  margin-top: 100px;
+  margin-top: 50px;
   color: black;
 }
 
 .branding {
   position: relative;
+  background-image: linear-gradient(to bottom right, #49538ae3, #34407de3);
+  overflow: hidden;
+}
+
+.flower-one,
+.flower-two,
+.three,
+.four,
+.five,
+.bee-one,
+.bee-two,
+.seven,
+.eight {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.bee-one {
+  right: 22px;
+  top: 325px;
+  width: 10%;
+}
+
+.bee-two {
+  width: 7%;
+  top: 60%;
+  left: 11%;
+  transform: rotate(30deg);
+}
+
+.flower-one {
+  width: 91%;
+  bottom: -16px;
+  left: -51px;
+}
+
+.flower-two {
+  width: 36%;
+  top: 51%;
+  right: -8px;
+  transform: scaleX(-1);
+}
+
+.three {
+  width: 15%;
+  right: 50px;
+  top: 30%;
+}
+.four {
+  bottom: 29%;
+  left: 22%;
+  width: 9%;
+}
+.five {
+  position: absolute;
+  top: 129px;
+  left: 16%;
+  transform: rotate(-35deg);
+  width: 41%;
+}
+
+.seven {
+  transform: rotate(35deg);
+  width: 35%;
+  right: -29px;
+  top: 77px;
+}
+
+.eight {
+  width: 30%;
+  left: -10px;
+  top: 30%;
 }
 
 .bee-way-logo {
@@ -75,4 +149,64 @@
 
 .about {
   background-color: #002f3e;
+  overflow: hidden;
+}
+
+.about-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0 0 5px;
+}
+
+.about-text-box {
+  width: 72vw;
+}
+
+.about-title {
+  font-size: 45px;
+  letter-spacing: 1.5px;
+  color: white;
+}
+
+.contact-links {
+  display: flex;
+  width: 72vw;
+  margin: 30px 0 0 0;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.about-text,
+.address {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.address {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.contact-us {
+  margin-top: 15px;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.fa-instagram,
+.fa-facebook-square {
+  margin: 15px;
+  font-size: 35px;
+  color: white;
 }

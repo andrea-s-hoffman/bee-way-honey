@@ -7,7 +7,7 @@ a {
   width: 100vw;
   height: 100vh;
   justify-content: center;
-  margin: 50px 0 0 0;
+  /* margin: 50px 0 0 0; */
   position: relative;
 }
 
@@ -15,13 +15,13 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 310px;
+  width: 80vw;
   margin-top: 15vh;
 }
 
 .prod-img {
-  width: 325px;
-  height: 325px;
+  width: 80vw;
+  height: 80vw;
   margin: 0 0 20px 0;
 }
 
@@ -52,15 +52,26 @@ a {
   font-size: 20px;
   color: #002f3e;
   letter-spacing: 0.25px;
+  line-height: 20px;
 }
 
 .description,
 .oz {
   font-family: "Oswald", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 22px;
   letter-spacing: 0.25px;
+  color: #002f3e;
   /* font-weight: 400; */
+}
+
+.add-box {
+  width: 60px;
+  height: 60px;
+  background-color: #002f3e;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .add {
@@ -70,10 +81,12 @@ a {
   line-height: 22px;
   letter-spacing: 0.25px;
   font-weight: 500;
+  text-align: center;
+  color: white;
 }
 
-.add:hover {
-  border-bottom: solid 1px black;
+.add-box:hover {
+  background-color: #92215e;
 }
 
 .fa-chevron-left,
@@ -85,7 +98,7 @@ a {
   font-size: 32px;
   transform: translate(-50%, -50%);
   padding: 10px;
-  color: black;
+  color: #002f3e;
 }
 
 .fa-chevron-left {
