@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { HoneyService } from '../honey.service';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,6 @@ export class ProductsComponent implements OnInit {
   @Input() productsRef: any[] = [];
   @Input() itemRef: any;
   @Output() newCartItemEvent = new EventEmitter<any>();
-  // @Output() newSizeSelectionEvent = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
@@ -19,7 +19,6 @@ export class ProductsComponent implements OnInit {
 
   emitCartItem = (item: any): void => {
     this.newCartItemEvent.emit(item);
-    // this.newSizeSelectionEvent.emit(size);
     console.log(item);
   }
 

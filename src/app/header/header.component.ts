@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import gsap from 'gsap/all';
 import { HoneyService } from '../honey.service';
+
 
 @Component({
   selector: 'app-header',
@@ -24,6 +26,21 @@ export class HeaderComponent implements OnInit {
   toggleShowCart = (): void => {
     this.showCart = !this.showCart;
     this.total = this.honeyService.getAndSetTotal();
+    this.quantity = this.honeyService.getAndSetQty();
+  }
+
+  deleteFromCart = (item: any): void => {
+    this.honeyService.deleteItemFromCart(item);
+    this.total = this.honeyService.getAndSetTotal();
+    this.cart = this.honeyService.getAndSetCart();
+    this.quantity = this.honeyService.getAndSetQty();
+  }
+
+  addAnotherToCart = (item: any): void => {
+    this.honeyService.addAnotherItemToCart(item);
+    this.total = this.honeyService.getAndSetTotal();
+    this.cart = this.honeyService.getAndSetCart();
+    this.quantity = this.honeyService.getAndSetQty();
   }
 
 

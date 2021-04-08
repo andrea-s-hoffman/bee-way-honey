@@ -76,4 +76,26 @@ export class HoneyService {
     this.totalQuantity++;
   }
 
+  deleteItemFromCart = (item: any): void => {
+    if (item.quantity > 1) {
+      item.quantity--;
+      this.totalDue -= item.firstSizePrice;
+    } else if (item.quantity <= 1) {
+      let price = item.firstSizePrice;
+      let index = this.cart.findIndex((cartItem) => {
+        return cartItem === item;
+      })
+      this.cart.splice(index, 1);
+      this.totalDue -= price;
+    }
+    this.totalQuantity--;
+
+  }
+
+  addAnotherItemToCart = (item: any): void => {
+    item.quantity++;
+    this.totalDue += item.firstSizePrice;
+    this.totalQuantity++;
+  }
+
 }
