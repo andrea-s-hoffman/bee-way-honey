@@ -22,4 +22,8 @@ export class HomeComponent implements OnInit {
     this.honeyService.addToServiceCart(item);
   }
 
+  addToQty = (): void => {
+    this.honeyService.addToTotalQuantity();
+  }
+
 }

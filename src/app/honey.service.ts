@@ -65,15 +65,15 @@ export class HoneyService {
   addToServiceCart = (item: any): void => {
     if (!this.cart.includes(item)) {
       this.cart.push(item);
-      console.log(this.cart);
+      // console.log(this.cart);
 
     } else {
       item.quantity++;
-      console.log(item.quantity);
+      // console.log(item.quantity);
     }
     let price = item.firstSizePrice;
     this.totalDue += price;
-    this.totalQuantity++;
+    // this.totalQuantity++;
   }
 
   deleteItemFromCart = (item: any): void => {
@@ -96,6 +96,12 @@ export class HoneyService {
     item.quantity++;
     this.totalDue += item.firstSizePrice;
     this.totalQuantity++;
+  }
+
+  addToTotalQuantity = (): void => {
+    this.totalQuantity++;
+    console.log("hello", this.totalQuantity);
+
   }
 
 }

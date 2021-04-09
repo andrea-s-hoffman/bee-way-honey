@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   cart: any[] = [];
   showCart: boolean = false;
   total: number = 0;
-  quantity: number = 0;
+  quantity!: number;
 
   constructor(private honeyService: HoneyService) { }
 
@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
     this.cart = this.honeyService.getAndSetCart();
     this.total = this.honeyService.getAndSetTotal();
     this.quantity = this.honeyService.getAndSetQty();
+
   }
 
   toggleShowCart = (): void => {

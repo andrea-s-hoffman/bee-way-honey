@@ -16,7 +16,7 @@
                     {{itemRef.firstSize}}</p> -->
                 <!-- <p class="pos oz" [ngClass]="{'selected': oneOzSelected === false}" (click)="toggleSizeSelection()">
                     {{itemRef.secondSize}}</p> -->
-                <div class="add-box" (click)="emitCartItem(itemRef)">
+                <div class="add-box" (click)="emitCartItem(itemRef); emitQtyNumber()">
                     <p class="pos add">add to cart</p>
                 </div>
                 <!-- <p class="pos details">more details</p> -->

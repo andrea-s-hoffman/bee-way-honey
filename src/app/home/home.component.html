@@ -24,7 +24,7 @@
     </section>
     <section class="products" id="shop">
         <app-products *ngFor="let item of productsForSale, index as i" [itemRef]="item" [productsRef]="productsForSale"
-            (newCartItemEvent)="addToCart($event)">
+            (newCartItemEvent)="addToCart($event)" (newAddQuantity)="addToQty()">
         </app-products>
     </section>
     <section class="about" id="about">

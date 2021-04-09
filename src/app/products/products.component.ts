@@ -12,6 +12,7 @@ export class ProductsComponent implements OnInit {
   @Input() productsRef: any[] = [];
   @Input() itemRef: any;
   @Output() newCartItemEvent = new EventEmitter<any>();
+  @Output() newAddQuantity = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
@@ -19,7 +20,12 @@ export class ProductsComponent implements OnInit {
 
   emitCartItem = (item: any): void => {
     this.newCartItemEvent.emit(item);
-    console.log(item);
+    // console.log(item);
+  }
+
+  emitQtyNumber = () => {
+    this.newAddQuantity.emit();
+
   }
 
   toggleSizeSelection = (): void => {

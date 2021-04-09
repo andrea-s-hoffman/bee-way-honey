@@ -1,0 +1,207 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.contact,
+.pay-deets,
+.shipping,
+.its-the-cart-yo,
+.total {
+  font-size: 20px;
+  font-family: "Clarendon Bold";
+}
+
+.pay-deets,
+.shipping,
+.its-the-cart-yo {
+  margin: 25px 0 0 0;
+}
+
+.customer-info {
+  width: 60%;
+  margin: 100px 0 0 0;
+  border-right: 0.5px solid lightgray;
+  overflow-y: scroll;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  align-items: center;
+}
+
+label {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(187, 187, 187);
+}
+
+input,
+.slash {
+  border-bottom: 1px solid lightgray;
+  margin: 0 0 10px 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(187, 187, 187);
+  width: 100%;
+}
+
+.fab {
+  font-size: 38px;
+}
+
+.far {
+  font-size: 30px;
+  color: lightgray;
+  margin: 0 10px 0 0;
+}
+
+input[type="checkbox"]:checked + .far {
+  color: #212529;
+}
+
+.credit-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+input[type="radio"]:checked + label {
+  color: #212529;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+  display: none;
+}
+
+.checkout-container {
+  overflow-y: scroll;
+  width: 40%;
+  margin: 100px 0 0 0;
+  padding: 0 10px;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-img {
+  width: 75%;
+}
+
+.sign-up {
+  display: flex;
+  border: 2px solid #ecc236;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 5px 0;
+}
+
+#sign-up {
+  margin: 5px 10px 0 0;
+  width: unset;
+  visibility: hidden;
+}
+
+/* .city-state {
+  display: flex;
+  width: 100%;
+} */
+
+#city {
+  width: 40%;
+}
+
+#state {
+  width: 28%;
+  margin: 0 0 0 3px;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  border: solid 2px #ecc236;
+  border-radius: 20px;
+  padding: 0 5px;
+}
+
+.city,
+.state {
+  width: 15%;
+}
+
+.sign-up-text {
+  width: 70%;
+  color: #212529;
+  line-height: 20px;
+}
+
+.exp-cvv {
+  display: flex;
+}
+
+#exp-month,
+#exp-year {
+  width: 25%;
+  text-align: center;
+  color: #212529;
+}
+
+#cvv {
+  width: 55%;
+  text-align: center;
+  color: #212529;
+}
+
+#cc-number {
+  color: #212529;
+}
+
+.submit-payment {
+  background-color: #212529;
+  color: white;
+  border-radius: 25px;
+  margin: 15px 0 100px 0;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  padding: 5px 20px;
+  text-transform: uppercase;
+}
+
+.total-calc {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+}
+
+.final-total {
+  font-weight: 500;
+  text-transform: uppercase;
+  border: solid 2px #ecc236;
+  padding: 5px;
+  width: 90%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.state-tax {
+  color: lightgray;
+  font-style: oblique;
+}

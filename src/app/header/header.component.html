@@ -15,7 +15,7 @@
             </a>
             <button class="cart" (click)="toggleShowCart()">
                 <div class="cart-number" *ngIf="cart.length > 0">
-                    <p class="number-of-items">{{quantity}}</p>
+                    <p class="number-of-items">{{cart[0]?.quantity + cart[1]?.quantity + cart[2]?.quantity}}</p>
                 </div>
                 <i class="fas fa-shopping-cart"></i>
             </button>
@@ -42,6 +42,8 @@
                 </div>
             </li>
         </ul>
-        <p class="cart-detail cart-total">Total: ${{total.toFixed(2)}}</p>
+        <p class="cart-detail cart-total" *ngIf="cart.length > 0">subtotal: ${{total.toFixed(2)}}</p>
+        <p class="checkout-btn" *ngIf="cart.length > 0" routerLink="/checkout">checkout</p>
+        <p class="cart-detail cart-total" *ngIf="cart.length === 0">Your cart is empty</p>
     </div>
 </div>

@@ -11,7 +11,9 @@
   src: url("src/assets/ClarendonLTStd-Bold.otf") format("opentype");
 }
 
-* {
+*,
+body,
+p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,7 +22,11 @@
   text-decoration: none;
   scroll-behavior: smooth;
   font-size: 14px;
-  font-family: "Clarendon";
+  font-family: "Clarendon", serif;
+}
+
+ul {
+  margin: 0;
 }
 
 a,
@@ -32,6 +38,23 @@ a:visited {
 
 p {
   margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #212529;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* colors
