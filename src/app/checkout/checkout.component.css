@@ -19,6 +19,11 @@
   margin: 25px 0 0 0;
 }
 
+.quantity-container {
+  display: flex;
+  justify-content: center;
+}
+
 .customer-info {
   width: 60%;
   margin: 100px 0 0 0;
@@ -41,6 +46,10 @@ label {
   color: rgb(187, 187, 187);
 }
 
+li {
+  list-style: none;
+}
+
 input,
 .slash {
   border-bottom: 1px solid lightgray;
@@ -59,11 +68,12 @@ input,
 .far {
   font-size: 30px;
   color: lightgray;
-  margin: 0 10px 0 0;
+  margin: 0 10px 0 20px;
 }
 
-input[type="checkbox"]:checked + .far {
+input[type="checkbox"]:checked + label i {
   color: #212529;
+  margin: 0 10px 0 0;
 }
 
 .credit-cards {
@@ -91,16 +101,39 @@ input[type="radio"] {
 .cart-container {
   display: flex;
   flex-direction: column;
+  margin: 0 10px 30px 10px;
 }
 
 .checkout-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
+}
+
+.edit-qty {
+  margin: 0 5px;
+  font-size: 30px;
+  margin: 0 7px;
+  background-color: #212529;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus-minus {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  margin-top: 3px;
+  padding: 15px;
 }
 
 .cart-img {
-  width: 75%;
+  width: 100%;
 }
 
 .sign-up {
@@ -116,6 +149,7 @@ input[type="radio"] {
   margin: 5px 10px 0 0;
   width: unset;
   visibility: hidden;
+  display: none;
 }
 
 /* .city-state {
@@ -133,8 +167,8 @@ input[type="radio"] {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 2px;
-  border: solid 2px #ecc236;
+  letter-spacing: 1px;
+  border: solid 2px lightgray;
   border-radius: 20px;
   padding: 0 5px;
 }
@@ -144,10 +178,19 @@ input[type="radio"] {
   width: 15%;
 }
 
+.sup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .sign-up-text {
-  width: 70%;
   color: #212529;
   line-height: 20px;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .exp-cvv {
@@ -184,6 +227,10 @@ input[type="radio"] {
   text-transform: uppercase;
 }
 
+.submit-payment:hover {
+  background-color: lightgray;
+}
+
 .total-calc {
   font-family: "Oswald", sans-serif;
   font-size: 16px;
@@ -204,4 +251,89 @@ input[type="radio"] {
 .state-tax {
   color: lightgray;
   font-style: oblique;
+}
+
+.order-confirm-container {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-confirm {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+.order-details-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.order-details {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.margin {
+  margin-top: 10px;
+}
+
+.thanks {
+  font-family: "Clarendon Bold";
+  font-size: 30px;
+  line-height: 28px;
+}
+
+.heading {
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 20px;
+  border-top: solid 1px lightgray;
+  padding-top: 20px;
+}
+
+.btw {
+  font-size: 14px;
+  color: lightgray;
+  font-style: oblique;
+  margin: 40px;
+}
+
+.x-box {
+  width: 75vw;
+  height: 65vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0 0 0;
+}
+
+.x-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 10px;
+  color: lightgray;
+  font-size: 26px;
+}
+.x-btn:hover {
+  color: #212529;
 }

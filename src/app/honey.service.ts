@@ -104,4 +104,11 @@ export class HoneyService {
 
   }
 
+  resetCart = (): void => {
+    this.cart = [];
+    this.totalDue = 0;
+    this.getAndSetCart();
+    this.getAndSetTotal();
+  }
+
 }

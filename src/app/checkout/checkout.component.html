@@ -1,26 +1,27 @@
 <app-header></app-header>
 <main class="main">
     <div class="customer-info">
-        <form class="form-container" #checkoutForm="ngForm">
+        <form class="form-container" #checkoutForm="ngForm" (ngSubmit)="onSubmit(checkoutForm)">
             <div>
                 <p class="contact">Contact</p>
-                <label for="first-name">First Name</label>
-                <input type="text" name="first-name" id="first-name" ngModel>
-                <label for="last-name">Last Name</label>
-                <input type="text" name="last-name" id="last-name" ngModel>
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="first-name" ngModel />
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="last-name" ngModel>
                 <label for="phone">Phone</label>
                 <input type="number" name="phone" id="phone" ngModel>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" ngModel>
                 <div class="sign-up">
-                    <input type="checkbox" name="sign-up" id="sign-up" (input)="emailSignUpInput(checkoutForm)" ngModel>
-                    <i class="far fa-envelope-open"></i>
-                    <label for="sign-up" class="sign-up-text">{{signUpText}}</label>
+                    <input type="checkbox" name="signUp" id="sign-up" (input)="emailSignUpInput(checkoutForm)" ngModel>
+                    <label for="sign-up" class="sup"><i class="far fa-envelope-open"></i>
+                        <p class="sign-up-text">{{signUpText}}</p>
+                    </label>
                 </div>
                 <p class="shipping">Shipping</p>
                 <label for="street">Street Address</label>
                 <input type="text" name="street" id="street" ngModel>
-                <input type="text" name="street" id="street-two" ngModel>
+                <input type="text" name="streetTwo" id="street-two" ngModel>
                 <div class="city-state">
                     <label for="city" class="city">City</label>
                     <input type="text" name="city" id="city" ngModel>
@@ -82,24 +83,23 @@
                 </div>
                 <p class="pay-deets">Payment</p>
                 <div class="credit-cards">
-                    <input class="cc-select-type" type="radio" name="cc-type" id="mastercard" value="mastercard"
-                        ngModel>
+                    <input class="cc-select-type" type="radio" name="ccType" id="mastercard" value="mastercard" ngModel>
                     <label class="cc-select-type" for="mastercard"><i class="fab fa-cc-mastercard"></i></label>
-                    <input class="cc-select-type" type="radio" name="cc-type" id="visa" value="visa" ngModel>
+                    <input class="cc-select-type" type="radio" name="ccType" id="visa" value="visa" ngModel>
                     <label class="cc-select-type" for="visa"><i class="fab fa-cc-visa"></i></label>
-                    <input class="cc-select-type" type="radio" name="cc-type" id="discover" value="discover" ngModel>
+                    <input class="cc-select-type" type="radio" name="ccType" id="discover" value="discover" ngModel>
                     <label class="cc-select-type" for="discover"><i class="fab fa-cc-discover"></i></label>
                 </div>
                 <label for="cc-name">Name on card</label>
-                <input type="text" name="cc-name" id="cc-name" ngModel>
+                <input type="text" name="ccName" id="cc-name" ngModel>
                 <label for="cc-number">Credit Card Number</label>
-                <input name="cc-number" id="cc-number" type="tel" inputmode="numeric" pattern="\d*"
-                    autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" ngModel>
+                <input name="ccNumber" id="cc-number" type="tel" inputmode="numeric" pattern="\d*"
+                    autocomplete="cc-number" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" ngModel>
                 <div class="exp-cvv">
                     <div class="exp">
                         <label for="exp-date">Expires</label>
-                        <input type="text" name="exp-date" id="exp-month" maxlength="2" pattern="\d*" required ngModel>
-                        <span class="slash">/</span><input type="text" name="exp-date" id="exp-year" maxlength="2"
+                        <input type="text" name="expDate" id="exp-month" maxlength="2" pattern="\d*" required ngModel>
+                        <span class="slash">/</span><input type="text" name="expDate" id="exp-year" maxlength="2"
                             pattern="\d*" required ngModel>
                     </div>
                     <div>
@@ -117,26 +117,57 @@
             <p class="total-calc">subtotal: ${{subtotal.toFixed(2)}}</p>
             <p class="total-calc" [ngClass]="{'state-tax': stateSubmission === false}">{{state}} sales tax:
                 {{salesTax.toFixed(2)}}%</p>
+            <p class="total-calc">+ shipping: $5.99</p>
             <p class="total-calc final-total" [ngClass]="{'state-tax': stateSubmission === false}">total:
                 ${{total.toFixed(2)}}</p>
         </div>
         <p class="its-the-cart-yo">Cart</p>
         <div class="cart-container">
             <li class="checkout-item" *ngFor="let item of cart, index as i">
-                <p class="cart-detail cart-prod">{{cart[i].product}}</p>
-                <img class="cart-img" src="{{cart[i].image}}" alt="">
-                <p class="cart-detail cart-price">${{cart[i].firstSizePrice.toFixed(2)}} each</p>
-                <div class="quantity-container">
-                    <div class="edit-qty">
-                        <p class="plus-minus" (click)="deleteFromCart(item)">-</p>
-                    </div>
-                    <p class="cart-detail cart-qty">QTY: </p>
-                    <p class="cart-qty cart-detail">{{cart[i].quantity}}</p>
-                    <div class="edit-qty">
-                        <p class="plus-minus" (click)="addAnotherToCart(item)">+</p>
+                <div>
+                    <p class="cart-detail cart-prod">{{cart[i].product}}</p>
+                    <img class="cart-img" src="{{cart[i].image}}" alt="">
+                    <p class="cart-detail cart-price">${{cart[i].firstSizePrice.toFixed(2)}} each</p>
+                    <div class="quantity-container">
+                        <div class="edit-qty">
+                            <p class="plus-minus" (click)="deleteFromCart(item)">-</p>
+                        </div>
+                        <p class="cart-detail cart-qty">QTY: </p>
+                        <p class="cart-qty cart-detail">{{cart[i].quantity}}</p>
+                        <div class="edit-qty">
+                            <p class="plus-minus" (click)="addAnotherToCart(item)">+</p>
+                        </div>
                     </div>
                 </div>
             </li>
         </div>
     </ul>
+    <div class="order-confirm-container" *ngIf="orderPlaced">
+        <div class="x-box">
+            <i class="x-btn far fa-times-circle" (click)="closePopup()"></i>
+            <div class="order-confirm">
+                <div class="order-details-box">
+                    <p class="thanks">Thanks for<br>your order!</p>
+                    <p class="order-details heading">Order Details:</p>
+                    <ul class="margin">
+                        <li *ngFor="let item of cart, index as i">
+                            <p class="order-details">x{{cart[i].quantity}}: {{cart[i].product}}</p>
+                        </li>
+                    </ul>
+                    <p class="order-details margin">${{total.toFixed(2)}} was charged to<br>xxx-xxx-xxx-{{lastFour}}</p>
+                    <p class="order-details heading">Customer Details:</p>
+                    <p class="order-details margin">{{fullName}}</p>
+                    <p class="order-details">{{phone}}</p>
+                    <p class="order-details">{{email}}</p>
+                    <p class="order-details margin">{{addressOne}}</p>
+                    <p class="order-details" *ngIf="addressTwo !== ''">{{addressTwo}}</p>
+                    <p class="order-details">{{cityState}}</p>
+                    <p class="order-details btw">Don't worry, this is a mock-up POS system and your information is not
+                        being
+                        stored or used in any
+                        way.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
