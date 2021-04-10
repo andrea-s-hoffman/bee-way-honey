@@ -359,11 +359,11 @@ input[type="radio"] {
 }
 
 .delete {
-  background-color: #212121;
-  color: white;
-  font-size: 22px;
-  width: 18px;
-  height: 18px;
+  background-color: white;
+  color: #212121;
+  font-size: 19px;
+  width: 17px;
+  height: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
