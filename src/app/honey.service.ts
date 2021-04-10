@@ -42,7 +42,6 @@ export class HoneyService {
     }
   ];
   totalDue: number = 0;
-  totalQuantity: number = 0;
 
   constructor() { }
 
@@ -56,10 +55,6 @@ export class HoneyService {
 
   getAndSetTotal = (): number => {
     return this.totalDue;
-  }
-
-  getAndSetQty = (): number => {
-    return this.totalQuantity;
   }
 
   addToServiceCart = (item: any): void => {
@@ -76,32 +71,28 @@ export class HoneyService {
     // this.totalQuantity++;
   }
 
-  deleteItemFromCart = (item: any): void => {
-    if (item.quantity > 1) {
+  minusItemFromCart = (item: any): void => {
+    if (item.quantity > 0) {
       item.quantity--;
       this.totalDue -= item.firstSizePrice;
-    } else if (item.quantity <= 1) {
-      let price = item.firstSizePrice;
-      let index = this.cart.findIndex((cartItem) => {
-        return cartItem === item;
-      })
-      this.cart.splice(index, 1);
-      this.totalDue -= price;
     }
-    this.totalQuantity--;
+  }
 
+  deleteFromCart = (item: any): void => {
+    let price = item.firstSizePrice;
+    let qty = item.quantity;
+    let priceTimesQty = price * qty;
+    let index = this.cart.findIndex((cartItem) => {
+      return cartItem === item;
+    })
+    this.cart.splice(index, 1);
+    this.totalDue -= priceTimesQty;
+    item.quantity = 1;
   }
 
   addAnotherItemToCart = (item: any): void => {
     item.quantity++;
     this.totalDue += item.firstSizePrice;
-    this.totalQuantity++;
-  }
-
-  addToTotalQuantity = (): void => {
-    this.totalQuantity++;
-    console.log("hello", this.totalQuantity);
-
   }
 
   resetCart = (): void => {

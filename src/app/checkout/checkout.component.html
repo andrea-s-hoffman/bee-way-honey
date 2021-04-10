@@ -126,11 +126,14 @@
             <li class="checkout-item" *ngFor="let item of cart, index as i">
                 <div>
                     <p class="cart-detail cart-prod">{{cart[i].product}}</p>
-                    <img class="cart-img" src="{{cart[i].image}}" alt="">
+                    <div class="img-cont">
+                        <i class="delete far fa-times-circle" (click)="deleteFromCart(item)"></i>
+                        <img class="cart-img" src="{{cart[i].image}}" alt="">
+                    </div>
                     <p class="cart-detail cart-price">${{cart[i].firstSizePrice.toFixed(2)}} each</p>
                     <div class="quantity-container">
                         <div class="edit-qty">
-                            <p class="plus-minus" (click)="deleteFromCart(item)">-</p>
+                            <p class="plus-minus" (click)="subtractFromCart(item)">-</p>
                         </div>
                         <p class="cart-detail cart-qty">QTY: </p>
                         <p class="cart-qty cart-detail">{{cart[i].quantity}}</p>

@@ -133,10 +133,15 @@ input[type="radio"] {
   font-weight: 500;
   margin-top: 3px;
   padding: 15px;
+  cursor: pointer;
 }
 
 .cart-img {
   width: 100%;
+}
+
+.img-cont {
+  position: relative;
 }
 
 .sign-up {
@@ -351,4 +356,19 @@ input[type="radio"] {
 }
 .x-btn:hover {
   color: #212529;
+}
+
+.delete {
+  background-color: #212121;
+  color: white;
+  font-size: 22px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -8px;
+  right: -18px;
+  border-radius: 50%;
 }

@@ -33,8 +33,8 @@ export class CheckoutComponent implements OnInit {
     this.subtotal = this.honeyService.getAndSetTotal();
   }
 
-  deleteFromCart = (item: any): void => {
-    this.honeyService.deleteItemFromCart(item);
+  subtractFromCart = (item: any): void => {
+    this.honeyService.minusItemFromCart(item);
     this.subtotal = this.honeyService.getAndSetTotal();
     this.cart = this.honeyService.getAndSetCart();
   }
@@ -94,6 +94,8 @@ export class CheckoutComponent implements OnInit {
       this.salesTax = 5.3;
     } else if (this.state === "WI") {
       this.salesTax = 5;
+    } else {
+      this.salesTax = 0;
     }
     let percentage = this.salesTax / 100;
     this.total = this.subtotal * percentage + this.subtotal + 5.99;
@@ -129,6 +131,12 @@ export class CheckoutComponent implements OnInit {
     this.cart = this.honeyService.getAndSetCart();
     this.total = this.honeyService.getAndSetTotal();
     this.subtotal = 0;
+  }
+
+  deleteFromCart = (item: any): void => {
+    this.honeyService.deleteFromCart(item);
+    this.subtotal = this.honeyService.getAndSetTotal();
+    this.cart = this.honeyService.getAndSetCart();
   }
 
 
