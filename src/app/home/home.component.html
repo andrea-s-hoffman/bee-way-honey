@@ -1,30 +1,32 @@
 <app-header></app-header>
 <main class="main">
-    <section class="branding" id="branding">
-        <div><img class="bee-way-logo" src="assets/Asset 10@2x.png" alt=""></div>
-        <img class="flower-one" src="assets/Asset 5@2x.png" alt="">
-        <img class="flower-two" src="assets/Asset 6@2x.png" alt="">
-        <img class="three" src="assets/Asset 7@2x.png" alt="">
-        <img class="four" src="assets/Asset 8@2x.png" alt="">
-        <img class="five" src="assets/Asset 13@2x.png" alt="">
-        <img class="bee-one" src="assets/Asset 3@2x.png" alt="">
-        <img class="bee-two" src="assets/Asset 3@2x.png" alt="">
-        <img class="seven" src="assets/Asset 11@2x.png" alt="">
-        <img class="eight" src="assets/Asset 12@2x.png" alt="">
-    </section>
-    <section class="set-shot" id="products">
-        <div class="shop-container">
-            <div class="text-container">
-                <a class="go-to-shop" href="#shop">
-                    <p class="shop-text">sweet to<br>the soul.<br><br> health to<br>the bones.</p>
-                    <i class="fas fa-chevron-down"></i>
-                </a>
+    <div class="landing">
+        <section class="branding" id="branding">
+            <div><img class="bee-way-logo" src="assets/Asset 14bee.svg" alt=""></div>
+            <img class="flower-one" src="assets/Asset 5@2x.png" alt="">
+            <img class="flower-two" src="assets/Asset 6@2x.png" alt="">
+            <img class="three" src="assets/Asset 7@2x.png" alt="">
+            <img class="four" src="assets/Asset 8@2x.png" alt="">
+            <img class="five" src="assets/Asset 13@2x.png" alt="">
+            <img class="bee-one" src="assets/Asset 3@2x.png" alt="">
+            <img class="bee-two" src="assets/Asset 3@2x.png" alt="">
+            <img class="seven" src="assets/Asset 11@2x.png" alt="">
+            <img class="eight" src="assets/Asset 12@2x.png" alt="">
+        </section>
+        <section class="set-shot" id="products">
+            <div class="shop-container">
+                <div class="text-container">
+                    <a class="go-to-shop" href="#shop">
+                        <p class="shop-text">sweet to<br>the soul.<br><br> health to<br>the bones.</p>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <section class="products" id="shop">
         <app-products *ngFor="let item of productsForSale, index as i" [itemRef]="item" [productsRef]="productsForSale"
-            (newCartItemEvent)="addToCart($event)"></app-products>
+            (newCartItemEvent)="addToCart($event)" class="card"></app-products>
     </section>
     <section class="about" id="about">
         <div class="about-container">

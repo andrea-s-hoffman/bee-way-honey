@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+.flower-line {
+  visibility: hidden;
+}
+
 .contact,
 .pay-deets,
 .shipping,
@@ -62,8 +66,13 @@ input,
   width: 100%;
 }
 
+input {
+  padding-left: 8px;
+}
+
 .fab {
   font-size: 38px;
+  cursor: pointer;
 }
 
 .far {
@@ -97,7 +106,7 @@ input[type="radio"] {
 
 .checkout-container {
   overflow-y: scroll;
-  width: 40%;
+  width: 100%;
   margin: 100px 0 0 0;
   padding: 0 10px;
 }
@@ -137,6 +146,12 @@ input[type="radio"] {
   cursor: pointer;
 }
 
+.checkit {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
 .cart-img {
   width: 100%;
 }
@@ -152,6 +167,7 @@ input[type="radio"] {
   align-items: center;
   border-radius: 30px;
   padding: 5px 0;
+  cursor: pointer;
 }
 
 #sign-up {
@@ -159,6 +175,7 @@ input[type="radio"] {
   width: unset;
   visibility: hidden;
   display: none;
+  cursor: pointer;
 }
 
 /* .city-state {
@@ -208,6 +225,11 @@ input[type="radio"] {
   font-size: 16px;
   font-weight: 400;
   width: 60%;
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
 }
 
 .exp-cvv {
@@ -354,6 +376,7 @@ input[type="radio"] {
   color: lightgray;
   font-size: 26px;
   z-index: 3;
+  cursor: pointer;
 }
 .x-btn:hover {
   color: #212529;
@@ -372,4 +395,133 @@ input[type="radio"] {
   top: -8px;
   right: -18px;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .cart-img {
+    width: 150px;
+  }
+
+  .form-box {
+    width: 400px;
+  }
+
+  .checkout-container {
+    width: 300px;
+  }
+
+  .sign-up-text {
+    width: unset;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .customer-info {
+    width: 75%;
+  }
+
+  .checkit {
+    width: 25%;
+  }
+
+  .form-box {
+    display: flex;
+    width: 98%;
+  }
+
+  .checkout-container {
+    width: 98%;
+    padding: 0 30px;
+  }
+
+  .pay-cont {
+    width: 40%;
+    padding: 0 15px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-cont {
+    width: 60%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .credit-cards {
+    width: 85%;
+    margin: 25px 0;
+  }
+
+  .fab {
+    font-size: 50px;
+  }
+
+  #cvv {
+    width: 68%;
+  }
+
+  #city {
+    width: 61%;
+  }
+
+  #state {
+    width: 22%;
+  }
+
+  #exp-month,
+  #exp-year {
+    width: 34%;
+  }
+
+  .sign-up {
+    width: 350px;
+    margin: 10px 0 0 0;
+  }
+
+  .pay-deets {
+    margin: 0;
+    width: 98%;
+  }
+
+  .city,
+  .state {
+    width: unset;
+  }
+
+  .shtop {
+    width: 98%;
+  }
+
+  .flex-col {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .flex-row {
+    display: flex;
+  }
+
+  .first-last {
+    width: 180px;
+  }
+
+  .submit-payment {
+    margin: 30px 0 0 0;
+  }
+
+  .flower-line {
+    visibility: visible;
+    width: 13px;
+    margin: 0 20px;
+  }
+
+  .customer-info,
+  .checkout-container {
+    margin: 150px 0 0 0;
+  }
 }
