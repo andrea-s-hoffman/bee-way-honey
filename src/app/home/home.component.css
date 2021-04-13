@@ -237,6 +237,37 @@
 }
 
 @media screen and (min-width: 768px) {
+  .three,
+  .four,
+  .bee-two,
+  .seven,
+  .eight {
+    visibility: hidden;
+  }
+
+  .bee-one {
+    right: 13%;
+    top: 23%;
+    width: 12%;
+  }
+
+  .flower-one {
+    width: 104%;
+    bottom: -1%;
+    left: -12%;
+  }
+
+  .flower-two {
+    width: 41%;
+    top: 49%;
+    right: -2%;
+  }
+
+  .five {
+    top: 18%;
+    left: 5%;
+    width: 50%;
+  }
   .beekeeper {
     background-image: url("src/assets/annie-spratt-8_WZU5xKFKk-unsplash.jpg");
     background-size: cover;
@@ -312,5 +343,27 @@
   .about-text-box,
   .contact-links {
     width: 495px;
+  }
+
+  .bee-one {
+    right: 16%;
+    width: 8%;
+  }
+
+  .flower-two {
+    width: 32%;
+    top: 43%;
+    right: 5%;
+  }
+
+  .flower-one {
+    width: 77%;
+    left: -4%;
+  }
+
+  .five {
+    width: 40%;
+    left: 10%;
+    top: 17%;
   }
 }
