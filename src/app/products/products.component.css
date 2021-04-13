@@ -157,4 +157,24 @@ a {
   .title-description {
     padding: 0;
   }
+  .description {
+    font-size: 15px;
+    margin: 0 8px 0 0;
+  }
+
+  .add-box {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .product-card {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .description {
+    margin: 0 15px 0 0;
+  }
 }

@@ -414,6 +414,15 @@ i {
   .sign-up-text {
     width: unset;
   }
+
+  .x-box {
+    height: 75vh;
+    width: 450px;
+  }
+
+  .btw {
+    margin: 40px 70px;
+  }
 }
 
 @media screen and (min-width: 1024px) {

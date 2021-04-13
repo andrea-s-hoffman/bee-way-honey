@@ -258,8 +258,8 @@
   }
 
   .card {
-    width: 225px;
-    height: 400px;
+    width: 200px;
+    height: 395px;
     border: hidden;
   }
 
@@ -268,4 +268,8 @@
   }
 }
 @media screen and (min-width: 1024px) {
+  .card {
+    width: 250px;
+    height: 425px;
+  }
 }
