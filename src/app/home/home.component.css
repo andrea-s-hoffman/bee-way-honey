@@ -12,6 +12,12 @@
   overflow-x: hidden;
 }
 
+.opacity {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .products {
   width: 100vw;
   display: flex;
@@ -34,6 +40,15 @@
   display: flex;
   position: relative;
   overflow: hidden;
+}
+
+.beekeeper {
+  width: 0;
+  visibility: hidden;
+}
+
+.about-info-cont {
+  width: 100%;
 }
 
 .shop-container {
@@ -159,6 +174,7 @@
 .about {
   background-color: #002f3e;
   overflow: hidden;
+  display: flex;
 }
 
 .about-container {
@@ -172,7 +188,7 @@
 }
 
 .about-text-box {
-  width: 72vw;
+  width: 72%;
 }
 
 .about-title {
@@ -183,7 +199,7 @@
 
 .contact-links {
   display: flex;
-  width: 72vw;
+  width: 72%;
   margin: 30px 0 0 0;
 }
 
@@ -221,6 +237,26 @@
 }
 
 @media screen and (min-width: 768px) {
+  .beekeeper {
+    background-image: url("src/assets/annie-spratt-8_WZU5xKFKk-unsplash.jpg");
+    background-size: cover;
+    width: 40%;
+    height: 100%;
+    background-position: center;
+    visibility: hidden;
+  }
+  .beekeeper {
+    visibility: visible;
+  }
+
+  .about-text-box,
+  .contact-links {
+    width: 350px;
+  }
+
+  .about-info-cont {
+    width: 60%;
+  }
   .bee-way-logo {
     width: 250px;
     position: absolute;
@@ -271,5 +307,10 @@
   .card {
     width: 250px;
     height: 425px;
+  }
+
+  .about-text-box,
+  .contact-links {
+    width: 495px;
   }
 }
